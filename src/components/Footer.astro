@@ -1,13 +1,6 @@
 ---
 const currentYear = new Date().getFullYear();
 
-const exploreLinks = [
-  { href: "/memes", label: "Memes" },
-  { href: "/viral", label: "Viral" },
-  { href: "/slang", label: "Slang" },
-  { href: "/explained", label: "Explained" },
-];
-
 const siteLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -27,21 +20,13 @@ const siteLinks = [
         <p>The internet, explained.</p>
       </div>
 
-      <div class="footer-columns">
-        <nav class="footer-nav" aria-label="Explore categories">
-          <p class="footer-nav-heading">Explore</p>
-          {exploreLinks.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </nav>
+      <nav class="footer-nav" aria-label="Site">
+        <p class="footer-nav-heading">Site</p>
 
-        <nav class="footer-nav" aria-label="Site">
-          <p class="footer-nav-heading">Site</p>
-          {siteLinks.map((link) => (
-            <a href={link.href}>{link.label}</a>
-          ))}
-        </nav>
-      </div>
+        {siteLinks.map((link) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </nav>
     </div>
 
     <div class="footer-bottom">
@@ -92,11 +77,6 @@ const siteLinks = [
     font-size: 0.9rem;
   }
 
-  .footer-columns {
-    display: flex;
-    gap: 56px;
-  }
-
   .footer-nav-heading {
     margin-bottom: 14px;
     color: var(--color-text-muted);
@@ -144,10 +124,6 @@ const siteLinks = [
     .footer-main {
       flex-direction: column;
       gap: 32px;
-    }
-
-    .footer-columns {
-      gap: 36px;
     }
 
     .footer-bottom {
