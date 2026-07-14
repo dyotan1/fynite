@@ -1,1 +1,3 @@
-3
+{
+  "extends": "astro/tsconfigs/strict"
+}
