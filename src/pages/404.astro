@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found"
+  description="The page you're looking for could not be found."
+  canonical="/404"
+>
+  <section class="not-found page-container">
+    <div class="not-found-inner">
+      <p class="error-code">404</p>
+
+      <h1>This page fell off the internet.</h1>
+
+      <p class="error-description">
+        The link might be broken, the page may have moved, or it never existed
+        in the first place.
+      </p>
+
+      <a class="btn btn-primary" href="/">
+        Back to Fynite
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .not-found {
+    display: flex;
+    align-items: center;
+    min-height: 62vh;
+    padding-top: 72px;
+    padding-bottom: 96px;
+  }
+
+  .not-found-inner {
+    max-width: 620px;
+  }
+
+  .error-code {
+    margin-bottom: 18px;
+    color: var(--color-brand);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  h1 {
+    max-width: 600px;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .error-description {
+    max-width: 500px;
+    margin-top: 24px;
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .btn {
+    margin-top: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .not-found {
+      min-height: 58vh;
+      padding-top: 56px;
+      padding-bottom: 72px;
+    }
+
+    .error-description {
+      margin-top: 20px;
+    }
+
+    .btn {
+      margin-top: 28px;
+    }
+  }
+</style>
