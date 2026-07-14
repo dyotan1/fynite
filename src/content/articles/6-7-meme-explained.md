@@ -1,30 +1,94 @@
 ---
 title: "'6-7': What It Means and Why Kids Won't Stop Saying It"
-description: "It has no real meaning, comes with a hand gesture, and started with a rap lyric about a basketball player's height. Here's the full story behind 6-7."
+description: "The phrase has no fixed meaning, comes with a hand gesture, and grew from a rap lyric into a basketball-fuelled internet meme."
 category: slang
 publishedAt: 2026-07-10
+updatedAt: 2026-07-14
 image: /images/six-seven-meme.jpg
 imageAlt: "Flat illustration of a teenager making a two-handed seesaw gesture beside large stylized numbers six and seven."
+sources:
+  - title: "Associated Press — Skrilla on how the 6-7 craze started"
+    url: "https://apnews.com/article/0d8f76e2af07aefff583b771cbb25acd"
+  - title: "The Washington Post — Why kids keep saying 6-7"
+    url: "https://www.washingtonpost.com/style/trends/2025/10/21/six-seven-meme-gen-alpha/"
+  - title: "Pitchfork — Let's Talk About 6 7"
+    url: "https://pitchfork.com/thepitch/lets-talk-about-skrilla-doot-doot-6-7/"
 ---
 
-If a kid has shouted "six-seven" at you recently while making an odd up-and-down hand motion, you've encountered one of 2025's most inexplicable and most-discussed slang trends: 6-7.
+If a kid has shouted "six-seven" while making an up-and-down hand motion, you have encountered one of the internet's strangest recent catchphrases: 6-7.
 
-## What it is
+The confusing part is also the simplest answer. **6-7 has no single fixed meaning.**
 
-6-7, pronounced "six seven" and sometimes written as "67," is an internet meme, slang term, and hand gesture that spread rapidly across TikTok and Instagram Reels through 2025. Crucially, it doesn't mean anything specific. It's typically shouted in response to almost anything — a number, a question, a moment of chaos — often paired with a seesawing hand gesture, palms up, alternating up and down. Its appeal is less about communicating an idea and more about the sound, the timing, and the reaction it gets.
+## What does 6-7 mean?
 
-## Where it came from
+Usually, nothing specific.
 
-The phrase traces back to the drill rap song "Doot Doot (6 7)" by American rapper Skrilla, where the line "6-7, I just bipped right on the highway" hits right as the beat drops. What the "6-7" refers to in the song is genuinely ambiguous — some listeners connect it to Philadelphia's 67th Street, Skrilla's hometown area, though the rapper hasn't offered one definitive explanation.
+"Six-seven" is used as a reaction, an interruption, an inside joke, or simply something to shout when the numbers six or seven appear in conversation.
 
-The song caught on in video edits of basketball highlights, especially footage of NBA player LaMelo Ball, who happens to be listed at 6 feet 7 inches tall — a coincidence that made the audio a natural fit for basketball content and helped it spread through sports fan pages. Overtime Elite player Taylen "TK" Kinney's habit of repeating the phrase gave it another push. Then, in March 2025, a video of a young fan named Maverick Trevillian shouting "6-7" with the accompanying hand gesture at a basketball game went viral, and he became widely known online as the "67 Kid" — a moment often credited with pushing the phrase from a niche basketball-audio trend into a mainstream, all-purpose meme.
+The phrase is often paired with a palms-up hand gesture, with the hands moving up and down.
 
-## How it's used now
+Its meaning changes with the moment because the meme is less about communicating an idea and more about recognising the joke.
 
-Once it left basketball edits behind, 6-7 became a kind of universal response — shouted by kids in classrooms, carved into pumpkins, chalked onto sidewalks, and dropped into completely unrelated conversations purely because it gets a reaction. Its lack of fixed meaning is part of the joke: adults asking "but what does it mean?" is, to the kids saying it, the entire point.
+## Where did 6-7 come from?
 
-Commentators and news outlets have grouped 6-7 with the broader "brain rot" conversation — a term for the kind of low-effort, repetitive content that spreads because it's easy to imitate rather than because it says anything. Others have pointed to it as one more sign of how visible Generation Alpha has become in shaping internet culture, setting slang trends that spread faster than most adults, or even older teens, can track.
+The phrase comes from Philadelphia rapper Skrilla's song **"Doot Doot (6 7)."**
 
-## Why it matters
+The track circulated before its official 2025 release and its "6-7" refrain began appearing in short-form videos.
 
-6-7 is a clean example of how meaning is optional for something to spread online. It didn't need a clear definition, a celebrity endorsement, or a clever joke — it needed a distinctive sound, a physical gesture that's fun to copy, and one viral video of a real kid using it with total conviction. That combination was enough to turn an ambiguous rap lyric into one of the most talked-about slang terms of the year.
+Skrilla has resisted giving the viral phrase one strict definition. As the meme expanded, 6-7 became something people could use however they wanted.
+
+That ambiguity turned out to be perfect fuel for internet culture.
+
+## What does basketball have to do with it?
+
+Basketball helped push the phrase far beyond the original song.
+
+The audio appeared in edits featuring professional basketball players, particularly LaMelo Ball. Ball's listed height of 6 feet 7 inches gave creators an obvious visual joke to connect with the lyric.
+
+Basketball prospect Taylen "TK" Kinney also became strongly associated with the phrase through social media content.
+
+Then a young basketball fan became known online as the "67 Kid" after a clip of him enthusiastically shouting the phrase and making the hand gesture spread widely.
+
+By that point, 6-7 was no longer just a lyric.
+
+It was a meme.
+
+## Why do kids keep saying it?
+
+Because other people recognise it.
+
+That is basically the engine behind the joke.
+
+Someone says six. Someone else yells "six-seven." A group reacts because everyone understands the reference.
+
+The confusion of people outside the joke can make it even funnier to the people using it.
+
+Internet memes do not always need a clever punchline. Sometimes repetition, timing, and a shared reference are enough.
+
+## Is 6-7 brain rot?
+
+The phrase is frequently grouped with "brain rot" internet culture: repetitive, absurd, low-context content that spreads rapidly online.
+
+But calling it brain rot does not fully explain why it works.
+
+Random catchphrases and inside jokes existed long before TikTok. Short-form video simply allows them to travel between communities at extreme speed.
+
+A lyric can become a basketball edit.
+
+The basketball edit can become a reaction.
+
+The reaction can become a classroom joke.
+
+Eventually, millions of people recognise two numbers without agreeing on what they mean.
+
+## Why 6-7 became so big
+
+6-7 had nearly everything a meme needs.
+
+It was short. It had a recognisable sound. It came with a gesture. Basketball gave creators an easy visual connection, and viral clips gave people examples to copy.
+
+Most importantly, nobody needed an explanation before joining in.
+
+That may be the best explanation of 6-7 itself.
+
+**It does not need to mean much to mean something to the people who recognise the joke.**
