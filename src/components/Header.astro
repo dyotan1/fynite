@@ -1,1 +1,203 @@
-7
+---
+import SearchButton from "./SearchButton.astro";
+---
+
+<header class="site-header">
+  <div class="header-inner page-container">
+    <a class="brand" href="/" aria-label="Fynite home">
+      <img
+        class="brand-logo"
+        src="/logo.svg"
+        alt=""
+        width="38"
+        height="38"
+      />
+
+      <span class="brand-name">Fynite</span>
+    </a>
+
+    <div class="header-actions">
+      <SearchButton />
+
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="site-navigation"
+        data-menu-button
+      >
+        <svg
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+          width="23"
+          height="23"
+        >
+          <path d="M4 7h16" />
+          <path d="M4 12h16" />
+          <path d="M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    class="site-navigation"
+    id="site-navigation"
+    aria-label="Main navigation"
+    data-navigation
+    hidden
+  >
+    <div class="navigation-inner page-container">
+      <a href="/">Home</a>
+      <a href="/memes">Memes</a>
+      <a href="/viral">Viral</a>
+      <a href="/slang">Slang</a>
+      <a href="/explained">Explained</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuButton =
+    document.querySelector<HTMLButtonElement>("[data-menu-button]");
+
+  const navigation =
+    document.querySelector<HTMLElement>("[data-navigation]");
+
+  if (menuButton && navigation) {
+    menuButton.addEventListener("click", () => {
+      const isOpen =
+        menuButton.getAttribute("aria-expanded") === "true";
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Open navigation" : "Close navigation"
+      );
+
+      navigation.hidden = isOpen;
+    });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: relative;
+    z-index: 50;
+    background: var(--color-bg);
+  }
+
+  .header-inner {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .menu-button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: var(--color-text);
+    background: transparent;
+    border-radius: var(--radius-round);
+  }
+
+  .menu-button svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  .menu-button:active {
+    transform: scale(0.94);
+  }
+
+  .site-navigation {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .navigation-inner {
+    display: flex;
+    flex-direction: column;
+    padding-top: 14px;
+    padding-bottom: 18px;
+  }
+
+  .navigation-inner a {
+    padding: 13px 0;
+    color: var(--color-text-secondary);
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+
+  .navigation-inner a[aria-current="page"] {
+    color: var(--color-brand);
+  }
+
+  @media (hover: hover) {
+    .menu-button:hover {
+      color: var(--color-brand);
+      background: var(--color-brand-soft);
+    }
+
+    .navigation-inner a:hover {
+      color: var(--color-brand);
+    }
+  }
+
+  @media (min-width: 760px) {
+    .navigation-inner {
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+
+    .navigation-inner a {
+      padding: 0;
+      font-size: 0.95rem;
+    }
+  }
+</style>
