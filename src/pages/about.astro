@@ -10,6 +10,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="page-header page-container">
     <p class="eyebrow">About Fynite</p>
     <h1>We explain the internet, so you don't have to guess.</h1>
+
     <p class="page-lede">
       Something new blows up online every day &mdash; a meme, a phrase, a
       clip nobody can stop watching. Fynite exists to catch you up fast,
@@ -19,6 +20,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <section class="page-body article-container">
     <h2>What we do</h2>
+
     <p>
       Every story on Fynite answers the same three questions: what is this,
       where did it come from, and why is everyone talking about it. We cover
@@ -27,12 +29,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <h2>How we work</h2>
+
     <p>
       We research every story before we publish it. We check original
       sources, credit where a trend actually started when that's known, and
       say clearly when the origin of something is disputed or unclear &mdash;
       because on the internet, it often is.
     </p>
+
     <p>
       We write for people who live online, not for people studying it from
       the outside. That means plain language, no unnecessary jargon, and no
@@ -40,14 +44,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </p>
 
     <h2>Who's behind it</h2>
+
     <p>
       Fynite is an independent internet culture publication. We're not
       affiliated with any of the platforms, creators, or trends we cover.
     </p>
 
+    <h2>Get in touch</h2>
+
+    <p>
+      Have a question, spotted an error, or found an internet trend we should
+      look into? Email us at
+      <a class="email-link" href="mailto:borseujjwal24@gmail.com">
+        borseujjwal24@gmail.com
+      </a>.
+    </p>
+
     <div class="page-cta">
       <a class="btn btn-primary" href="/">Read the latest stories</a>
-      <a class="btn btn-secondary" href="/contact">Get in touch</a>
     </div>
   </section>
 </BaseLayout>
@@ -96,6 +110,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   .page-body p {
     margin-top: 1em;
     color: var(--color-text-secondary);
+  }
+
+  .email-link {
+    color: var(--color-brand);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .email-link:hover {
+    color: var(--color-brand-hover);
   }
 
   .page-cta {
