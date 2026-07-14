@@ -1,1 +1,131 @@
-8
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner page-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="/" class="brand" aria-label="Fynite home">
+          <img
+            src="/logo.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+
+          <span>Fynite</span>
+        </a>
+
+        <p>The internet, explained.</p>
+      </div>
+
+      <nav
+        class="footer-navigation"
+        aria-label="Footer navigation"
+      >
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© {currentYear} Fynite</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    margin-top: 96px;
+  }
+
+  .footer-inner {
+    padding-top: 40px;
+    padding-bottom: 28px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .footer-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 48px;
+  }
+
+  .footer-brand .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-brand img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+
+  .footer-brand .brand span {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.045em;
+  }
+
+  .footer-brand p {
+    margin-top: 14px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer-navigation {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .footer-navigation a {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .footer-bottom {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border-soft);
+  }
+
+  .footer-bottom p {
+    color: var(--color-text-muted);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  @media (hover: hover) {
+    .footer-navigation a:hover {
+      color: var(--color-brand);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .site-footer {
+      margin-top: 72px;
+    }
+
+    .footer-main {
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .footer-navigation {
+      flex-wrap: wrap;
+      gap: 18px 24px;
+    }
+
+    .footer-bottom {
+      margin-top: 36px;
+    }
+  }
+</style>
