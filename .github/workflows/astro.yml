@@ -26,7 +26,7 @@ jobs:
       - name: Build Astro site
         uses: withastro/action@v4
         with:
-          package-manager: npm@11
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
