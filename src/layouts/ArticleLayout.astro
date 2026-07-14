@@ -8,8 +8,17 @@ interface Props {
 }
 
 const { article } = Astro.props;
-const { title, description, category, publishedAt, updatedAt, image, imageAlt } =
-  article.data;
+
+const {
+  title,
+  description,
+  category,
+  publishedAt,
+  updatedAt,
+  image,
+  imageAlt,
+  sources,
+} = article.data;
 
 const siteUrl = Astro.site ?? new URL("https://fynite.in");
 const canonicalPath = Astro.url.pathname;
@@ -92,6 +101,7 @@ const breadcrumbJsonLd = {
         <time datetime={publishedAt.toISOString()}>
           {formatArticleDate(publishedAt)}
         </time>
+
         {
           updatedAt && (
             <span class="article-updated">
@@ -120,6 +130,31 @@ const breadcrumbJsonLd = {
     <div class="article-body article-container">
       <slot />
     </div>
+
+    {
+      sources && sources.length > 0 && (
+        <aside
+          class="article-sources article-container"
+          aria-labelledby="sources-title"
+        >
+          <h2 id="sources-title">Sources &amp; further reading</h2>
+
+          <ul>
+            {sources.map((source) => (
+              <li>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {source.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </aside>
+      )
+    }
 
     <footer class="article-footer article-container">
       <a class="btn btn-secondary" href={categoryHref}>
@@ -240,6 +275,34 @@ const breadcrumbJsonLd = {
     font-style: italic;
   }
 
+  .article-sources {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .article-sources h2 {
+    font-size: 1.15rem;
+    line-height: 1.35;
+  }
+
+  .article-sources ul {
+    margin-top: 16px;
+    padding-left: 1.2em;
+  }
+
+  .article-sources li {
+    margin-top: 10px;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+  }
+
+  .article-sources a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   .article-footer {
     margin-top: 56px;
     padding-top: 28px;
@@ -258,6 +321,10 @@ const breadcrumbJsonLd = {
     .article-body {
       margin-top: 30px;
       font-size: 1.02rem;
+    }
+
+    .article-sources {
+      margin-top: 40px;
     }
 
     .article-footer {
