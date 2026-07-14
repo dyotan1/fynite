@@ -24,6 +24,15 @@ const articles = defineCollection({
     image: z.string().optional(),
     imageAlt: z.string().optional(),
 
+    sources: z
+      .array(
+        z.object({
+          title: z.string(),
+          url: z.string().url(),
+        }),
+      )
+      .optional(),
+
     trending: z.boolean().default(false),
     draft: z.boolean().default(false),
   }),
