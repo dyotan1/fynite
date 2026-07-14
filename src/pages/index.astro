@@ -1,1 +1,254 @@
-1
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+
+import {
+  getLatestArticles,
+  getTrendingArticles,
+} from "../utils/articles";
+
+const trendingArticles =
+  await getTrendingArticles(6);
+
+const latestArticles =
+  await getLatestArticles(12);
+
+const trendingIds = new Set(
+  trendingArticles.map((article) => article.id),
+);
+
+const latestWithoutTrending =
+  latestArticles.filter(
+    (article) => !trendingIds.has(article.id),
+  );
+
+const hasTrending =
+  trendingArticles.length > 0;
+
+const hasLatest =
+  latestWithoutTrending.length > 0;
+---
+
+<BaseLayout>
+  <section class="hero">
+    <div class="hero-inner page-container">
+      <p class="hero-label">
+        <span aria-hidden="true"></span>
+        The internet, explained.
+      </p>
+
+      <h1>
+        Internet pe kya
+        <span>chal raha hai?</span>
+      </h1>
+
+      <p class="hero-description">
+        Memes, trends aur internet culture.
+        Hinglish mein, bina bakwaas ke.
+      </p>
+    </div>
+  </section>
+
+  {
+    hasTrending && (
+      <section
+        class="content-section page-container"
+        aria-labelledby="trending-heading"
+      >
+        <div class="section-heading">
+          <h2 id="trending-heading">
+            Abhi internet pe
+          </h2>
+
+          <span>Trending</span>
+        </div>
+
+        <div class="trending-grid">
+          {trendingArticles.map(
+            (article, index) => (
+              <ArticleCard
+                article={article}
+                featured={index === 0}
+              />
+            ),
+          )}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    hasLatest && (
+      <section
+        class="content-section page-container"
+        aria-labelledby="latest-heading"
+      >
+        <div class="section-heading">
+          <h2 id="latest-heading">
+            Latest explained
+          </h2>
+        </div>
+
+        <div class="latest-grid">
+          {latestWithoutTrending.map(
+            (article) => (
+              <ArticleCard article={article} />
+            ),
+          )}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .hero {
+    min-height: calc(
+      100svh - var(--header-height)
+    );
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    padding-top: 88px;
+    padding-bottom: 112px;
+  }
+
+  .hero-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    color: var(--color-text-secondary);
+    font-size: 0.74rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .hero-label span {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    background: var(--color-brand);
+    border-radius: var(--radius-round);
+  }
+
+  h1 {
+    max-width: 1040px;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 800;
+    line-height: 0.89;
+    letter-spacing: -0.075em;
+  }
+
+  h1 span {
+    display: block;
+    color: var(--color-brand);
+  }
+
+  .hero-description {
+    max-width: 540px;
+    margin-top: 42px;
+    color: var(--color-text-secondary);
+    font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+  }
+
+  .content-section {
+    padding-top: 88px;
+  }
+
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 34px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+  }
+
+  .section-heading span {
+    color: var(--color-brand);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 52px 32px;
+  }
+
+  .trending-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .latest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 52px 28px;
+  }
+
+  @media (max-width: 820px) {
+    .latest-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      align-items: flex-start;
+    }
+
+    .hero-inner {
+      padding-top: 88px;
+      padding-bottom: 76px;
+    }
+
+    .hero-label {
+      margin-bottom: 26px;
+      font-size: 0.68rem;
+    }
+
+    h1 {
+      font-size: clamp(3.45rem, 17vw, 5.1rem);
+      line-height: 0.91;
+    }
+
+    .hero-description {
+      max-width: 390px;
+      margin-top: 34px;
+      font-size: 1.04rem;
+    }
+
+    .content-section {
+      padding-top: 68px;
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
+    }
+
+    .trending-grid,
+    .latest-grid {
+      grid-template-columns: 1fr;
+      gap: 42px;
+    }
+
+    .trending-grid > :first-child {
+      grid-column: auto;
+    }
+  }
+</style>
