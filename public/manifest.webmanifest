@@ -1,0 +1,24 @@
+{
+  "name": "Fynite — The Internet, Explained",
+  "short_name": "Fynite",
+  "description": "Fynite explains internet culture: the memes, slang, and viral moments everyone's talking about, and why they matter.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f7f6f2",
+  "theme_color": "#f7f6f2",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "240x240",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "240x240",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

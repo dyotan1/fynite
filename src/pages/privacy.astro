@@ -1,1 +1,142 @@
-1
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const lastUpdated = "July 2026";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Fynite's privacy policy — what information we collect, how we use it, and the choices you have."
+  canonical="/privacy"
+  noindex={false}
+>
+  <section class="page-header page-container">
+    <p class="eyebrow">Privacy Policy</p>
+    <h1>Privacy Policy</h1>
+    <p class="page-lede">Last updated {lastUpdated}</p>
+  </section>
+
+  <section class="page-body article-container">
+    <p>
+      This policy explains what information Fynite collects when you visit
+      fynite.in, how it's used, and the choices available to you.
+    </p>
+
+    <h2>Information we collect</h2>
+    <p>
+      Fynite is a static publication. We don't require an account to read
+      our stories, and we don't collect personal information unless you
+      choose to give it to us directly &mdash; for example, by emailing us
+      through the contact page.
+    </p>
+    <p>
+      Like most websites, our hosting and analytics providers may
+      automatically log standard technical information, such as browser
+      type, device type, approximate location, and pages visited, to help us
+      understand how the site is used and to keep it secure.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      We use only the cookies or local storage necessary for the site to
+      function correctly. We do not use cookies to build advertising
+      profiles.
+    </p>
+
+    <h2>Third-party links</h2>
+    <p>
+      Our stories may link to external sites, videos, or posts we reference
+      or credit. We aren't responsible for the privacy practices of those
+      third-party sites, so we encourage you to review their policies
+      separately.
+    </p>
+
+    <h2>How we use information</h2>
+    <p>
+      Any information you send us directly, such as through email, is used
+      only to respond to you, to fact-check or follow up on story tips, or
+      to improve Fynite. We don't sell personal information.
+    </p>
+
+    <h2>Your choices</h2>
+    <p>
+      You can control cookies through your browser settings. If you've
+      contacted us directly and want your information removed from our
+      records, email us and we'll act on that request.
+    </p>
+
+    <h2>Changes to this policy</h2>
+    <p>
+      We may update this policy as Fynite grows. Material changes will be
+      reflected by updating the date at the top of this page.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about this policy can be sent to
+      <a href="mailto:hello@fynite.in">hello@fynite.in</a>.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding-top: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(1.9rem, 4vw, 2.5rem);
+  }
+
+  .page-lede {
+    margin-top: 14px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .page-body {
+    padding-top: 48px;
+    padding-bottom: 80px;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+
+  .page-body h2 {
+    margin-top: 2em;
+    font-size: 1.2rem;
+  }
+
+  .page-body h2:first-of-type {
+    margin-top: 1.6em;
+  }
+
+  .page-body p {
+    margin-top: 1em;
+    color: var(--color-text-secondary);
+  }
+
+  .page-body a {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .page-header {
+      padding-top: 36px;
+      padding-bottom: 32px;
+    }
+
+    .page-body {
+      padding-top: 36px;
+      padding-bottom: 56px;
+    }
+  }
+</style>

@@ -23,17 +23,11 @@
     Arial,
     sans-serif;
 
-  --font-display:
-    "Arial Black",
-    Inter,
-    ui-sans-serif,
-    sans-serif;
-
   --page-width: 1200px;
-  --article-width: 760px;
+  --article-width: 720px;
   --page-gutter: 24px;
 
-  --header-height: 72px;
+  --header-height: 64px;
 
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -149,9 +143,10 @@ h4,
 h5,
 h6 {
   color: var(--color-text);
-  font-family: var(--font-display);
-  line-height: 1;
-  letter-spacing: -0.045em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
 p {
@@ -225,6 +220,68 @@ ol {
   transform: translateY(0);
 }
 
+/* Shared "eyebrow" label used above headings across the site */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  background: var(--color-brand);
+  border-radius: var(--radius-round);
+}
+
+/* Reusable button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-round);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  color: var(--color-on-brand);
+  background: var(--color-brand);
+}
+
+.btn-secondary {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: var(--color-brand-hover);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
 @media (hover: hover) {
   a,
   button {
@@ -240,7 +297,7 @@ ol {
 @media (max-width: 640px) {
   :root {
     --page-gutter: 18px;
-    --header-height: 68px;
+    --header-height: 60px;
   }
 }
 

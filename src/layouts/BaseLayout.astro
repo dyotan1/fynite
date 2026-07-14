@@ -7,16 +7,22 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
   canonical?: string;
   noindex?: boolean;
+  type?: "website" | "article";
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title,
-  description = "Memes, trends aur internet culture. Hinglish mein, bina bakwaas ke.",
-  image = "/favicon.png",
+  description = "Fynite explains internet culture — the memes, slang, and viral moments everyone is talking about, and why they matter.",
+  image = "/social-card.jpg",
+  imageAlt = "Fynite — the internet, explained.",
   canonical,
   noindex = false,
+  type = "website",
+  jsonLd,
 } = Astro.props;
 
 const siteName = "Fynite";
@@ -24,17 +30,38 @@ const siteUrl = Astro.site ?? new URL("https://fynite.in");
 
 const pageTitle = title
   ? `${title} | ${siteName}`
-  : "Fynite — The internet, explained.";
+  : "Fynite — The Internet, Explained";
 
 const canonicalUrl = canonical
   ? new URL(canonical, siteUrl)
   : new URL(Astro.url.pathname, siteUrl);
 
 const socialImage = new URL(image, siteUrl);
+
+const jsonLdBlocks = jsonLd
+  ? Array.isArray(jsonLd)
+    ? jsonLd
+    : [jsonLd]
+  : [];
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteName,
+  url: siteUrl.toString(),
+  description:
+    "Fynite explains internet culture — the memes, slang, and viral moments everyone is talking about, and why they matter.",
+  publisher: {
+    "@type": "Organization",
+    name: siteName,
+    url: siteUrl.toString(),
+    logo: new URL("/logo.png", siteUrl).toString(),
+  },
+};
 ---
 
 <!doctype html>
-<html lang="en-IN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -43,25 +70,68 @@ const socialImage = new URL(image, siteUrl);
 
     <meta name="description" content={description} />
     <meta name="author" content={siteName} />
-    <meta name="theme-color" content="#e30491" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="color-scheme" content="light" />
 
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {
+      noindex ? (
+        <meta name="robots" content="noindex, nofollow" />
+      ) : (
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large"
+        />
+      )
+    }
 
     <link rel="canonical" href={canonicalUrl} />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
 
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteJsonLd)}
+    />
+
+    {
+      jsonLdBlocks.map((block) => (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(block)}
+        />
+      ))
+    }
 
     <slot name="head" />
   </head>

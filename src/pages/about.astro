@@ -1,1 +1,119 @@
-1
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About"
+  description="Fynite explains internet culture: the memes, slang, and viral moments everyone's talking about, and why they matter."
+  canonical="/about"
+>
+  <section class="page-header page-container">
+    <p class="eyebrow">About Fynite</p>
+    <h1>We explain the internet, so you don't have to guess.</h1>
+    <p class="page-lede">
+      Something new blows up online every day &mdash; a meme, a phrase, a
+      clip nobody can stop watching. Fynite exists to catch you up fast,
+      without the jargon.
+    </p>
+  </section>
+
+  <section class="page-body article-container">
+    <h2>What we do</h2>
+    <p>
+      Every story on Fynite answers the same three questions: what is this,
+      where did it come from, and why is everyone talking about it. We cover
+      memes, viral moments, internet slang, and the bigger online phenomena
+      that shape how people communicate.
+    </p>
+
+    <h2>How we work</h2>
+    <p>
+      We research every story before we publish it. We check original
+      sources, credit where a trend actually started when that's known, and
+      say clearly when the origin of something is disputed or unclear &mdash;
+      because on the internet, it often is.
+    </p>
+    <p>
+      We write for people who live online, not for people studying it from
+      the outside. That means plain language, no unnecessary jargon, and no
+      pretending something is more complicated than it is.
+    </p>
+
+    <h2>Who's behind it</h2>
+    <p>
+      Fynite is an independent internet culture publication. We're not
+      affiliated with any of the platforms, creators, or trends we cover.
+    </p>
+
+    <div class="page-cta">
+      <a class="btn btn-primary" href="/">Read the latest stories</a>
+      <a class="btn btn-secondary" href="/contact">Get in touch</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding-top: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-header .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    max-width: 720px;
+    font-size: clamp(1.9rem, 4vw, 2.7rem);
+    line-height: 1.15;
+  }
+
+  .page-lede {
+    max-width: 600px;
+    margin-top: 20px;
+    color: var(--color-text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.6;
+  }
+
+  .page-body {
+    padding-top: 48px;
+    padding-bottom: 80px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .page-body h2 {
+    margin-top: 2em;
+    font-size: 1.3rem;
+  }
+
+  .page-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .page-body p {
+    margin-top: 1em;
+    color: var(--color-text-secondary);
+  }
+
+  .page-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 2.6em;
+  }
+
+  @media (max-width: 640px) {
+    .page-header {
+      padding-top: 36px;
+      padding-bottom: 32px;
+    }
+
+    .page-body {
+      padding-top: 36px;
+      padding-bottom: 56px;
+    }
+  }
+</style>
