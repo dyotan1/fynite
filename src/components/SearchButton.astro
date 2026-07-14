@@ -1,1 +1,48 @@
-1
+<button
+  class="search-button"
+  type="button"
+  aria-label="Search Fynite"
+  data-search-button
+>
+  <svg
+    viewBox="0 0 24 24"
+    aria-hidden="true"
+    width="22"
+    height="22"
+  >
+    <circle cx="10.8" cy="10.8" r="6.6" />
+    <path d="m16 16 4.2 4.2" />
+  </svg>
+</button>
+
+<style>
+  .search-button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    color: var(--color-text);
+    background: transparent;
+    border-radius: var(--radius-round);
+  }
+
+  .search-button svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @media (hover: hover) {
+    .search-button:hover {
+      background: var(--color-brand-soft);
+      color: var(--color-brand);
+    }
+  }
+
+  .search-button:active {
+    transform: scale(0.94);
+  }
+</style>
