@@ -23,9 +23,11 @@ const siteLinks = [
       <nav class="footer-nav" aria-label="Site">
         <p class="footer-nav-heading">Site</p>
 
-        {siteLinks.map((link) => (
-          <a href={link.href}>{link.label}</a>
-        ))}
+        <div class="footer-links">
+          {siteLinks.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </div>
       </nav>
     </div>
 
@@ -86,13 +88,13 @@ const siteLinks = [
     text-transform: uppercase;
   }
 
-  .footer-nav {
+  .footer-links {
     display: flex;
-    flex-direction: column;
-    gap: 11px;
+    align-items: center;
+    gap: 24px;
   }
 
-  .footer-nav a {
+  .footer-links a {
     color: var(--color-text-secondary);
     font-size: 0.9rem;
     font-weight: 600;
@@ -111,7 +113,7 @@ const siteLinks = [
   }
 
   @media (hover: hover) {
-    .footer-nav a:hover {
+    .footer-links a:hover {
       color: var(--color-brand);
     }
   }
@@ -124,6 +126,11 @@ const siteLinks = [
     .footer-main {
       flex-direction: column;
       gap: 32px;
+    }
+
+    .footer-links {
+      gap: 22px;
+      flex-wrap: wrap;
     }
 
     .footer-bottom {
