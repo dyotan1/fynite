@@ -1,7 +1,7 @@
 ---
 title: "What Is WAG? The Football Internet Term Explained"
 description: "WAG stands for Wives and Girlfriends. Here's where the football term came from, why it became famous, and why it keeps trending during major tournaments."
-category: Memes
+category: memes
 publishedAt: 2026-07-22
 updatedAt: 2026-07-22
 image: /images/what-is-wag.jpg
